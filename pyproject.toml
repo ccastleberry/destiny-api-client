@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "destiny-api-client"
-version = "0.0.1"
+version = "0.0.2"
 description = "Client Library for the Destiny video game api."
 readme = "README.md"
 authors = [{ name = "Caleb Castleberry", email = "castle.caleb@gmail.com" }]
