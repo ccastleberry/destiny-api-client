@@ -17,7 +17,8 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 dependencies = [
-    "aiohttp"
+    "aiohttp",
+    "pydantic"
 ]
 requires-python = ">=3.9"
 
@@ -31,6 +32,7 @@ dev = [
     "mkdocs",
     "mkdocs-material",
     "pip-tools",
+    "pre-commit",
     "pytest"
 ]
 
