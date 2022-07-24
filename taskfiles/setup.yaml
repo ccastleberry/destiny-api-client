@@ -1,0 +1,29 @@
+version: '3'
+
+tasks:
+  install-git-hooks:
+    desc: "setup git pre-commit hook"
+    cmds:
+      - cp git_hooks/pre-commit .git/hooks/pre-commit
+      - chmod +x .git/hooks/pre-commit
+    sources:
+      - git_hooks/
+    generates:
+      - .git/hooks/
+  copy-env-template:
+    desc: "create .env file from template"
+    cmds:
+      - cp -n .env.template .env
+    status:
+      - test -f .env
+  setup:
+    desc: "setup local env."
+    cmds:
+      - task: install-git-hooks
+      - task: copy-env-template
+      - python -m venv venv
+      - task: install-local
+  install-local:
+    desc: "install this library in the local env in edit mode."
+    cmds:
+      - source venv/bin/activate && python -m pip install -e ".[dev]"

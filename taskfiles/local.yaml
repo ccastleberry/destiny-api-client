@@ -1,0 +1,40 @@
+version: '3'
+
+tasks:
+  format:
+    desc: "run isort and black"
+    cmds:
+      - isort src
+      - isort tests
+      - black src
+      - black tests
+    sources:
+      - src/
+      - tests/
+  mypy:
+    desc: "type check code"
+    cmds:
+      - mypy src
+      - mypy tests
+  lint:
+    desc: "run flake 8, isort check and black check"
+    cmds:
+      - isort --check src
+      - isort --check tests
+      - black --check src
+      - black --check tests
+      - flake8 src
+      - flake8 tests
+    sources:
+      - src/
+      - tests/
+  test:
+    desc: "run pytest"
+    cmds:
+      - pytest .
+  full-check:
+    desc: "run a full code quality check"
+    cmds:
+      - task: lint
+      - task: mypy
+      - task: test

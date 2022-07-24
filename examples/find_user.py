@@ -1,5 +1,13 @@
+import asyncio
+
 from destiny_api_client import DestinyClient
 
-if __name__ == '__main__':
+
+
+async def main():
     client = DestinyClient()
-    client.say_hello()
+    await client.say_hello()
+
+
+if __name__ == '__main__':
+    asyncio.run(main())
