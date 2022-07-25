@@ -2,35 +2,28 @@ version: '3'
 
 
 tasks:
-  lint-dags:
-    desc: "run isort, black, and flake8 to lint dags"
+  install:
+    desc: "install library"
     cmds:
-      - pip install isort black flake8
-      - isort --check-only dags
-      - black --check dags
-      - flake8 dags
-  mypy-dags:
-    desc: "run mypy on dags"
+      - python -m pip install ".[dev]"
+  lint:
+    desc: "run isort, black, and flake8"
     cmds:
-      - pip install pip-tools
-      - pip-compile
-      - pip-sync
-      - pip install mypy types-requests
-      - mypy  --namespace-packages --explicit-package-bases dags/
-    env:
-      PYTHON_PATH: ./dags
-  scan-dags:
+      - isort --check-only src
+      - black --check src
+      - flake8 src
+  mypy:
+    desc: "run mypy"
+    cmds:
+      - mypy  src
+  scan:
     desc: "Run xenon on dags"
     cmds:
       - pip install xenon
-      - xenon -b B -m A -a A dags/
+      - xenon -b B -m A -a A src/
   test-dags:
     desc: "Run Pytest on dags"
     cmds:
-      - pip install pip-tools
-      - pip-compile
-      - pip-sync
-      - pip install pytest
       - pytest .
 
 
