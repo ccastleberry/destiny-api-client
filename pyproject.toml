@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "destiny-api-client"
-version = "2022.7.1"
+version = "2022.7.2"
 description = "Client Library for the Destiny video game api."
 readme = "README.md"
 authors = [{ name = "Caleb Castleberry", email = "castle.caleb@gmail.com" }]
@@ -42,7 +42,7 @@ dev = [
 Homepage = "https://github.com/ccastleberry/destiny-api-client"
 
 [tool.bumpver]
-current_version = "2022.7.1"
+current_version = "2022.7.2"
 version_pattern = "YYYY.MM.INC0"
 commit_message = "bump version {old_version} -> {new_version}"
 commit = true
