@@ -8,14 +8,10 @@ tasks:
       - isort tests
       - black src
       - black tests
-    sources:
-      - src/
-      - tests/
   mypy:
     desc: "type check code"
     cmds:
       - mypy src
-      - mypy tests
   lint:
     desc: "run flake 8, isort check and black check"
     cmds:
@@ -25,15 +21,10 @@ tasks:
       - black --check tests
       - flake8 src
       - flake8 tests
-    sources:
-      - src/
-      - tests/
   scan:
     desc: "Run xenon"
     cmds:
       - xenon -b B -m A -a A src/
-    sources:
-      - src/
   test:
     desc: "run pytest"
     cmds:
