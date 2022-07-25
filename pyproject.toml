@@ -31,9 +31,11 @@ dev = [
     "isort",
     "mkdocs",
     "mkdocs-material",
+    "mypy",
     "pip-tools",
     "pre-commit",
-    "pytest"
+    "pytest",
+    "xenon",
 ]
 
 [project.urls]
