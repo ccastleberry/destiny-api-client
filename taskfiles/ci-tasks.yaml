@@ -17,7 +17,7 @@ tasks:
     cmds:
       - mypy  src
   scan:
-    desc: "Run xenon on dags"
+    desc: "Run xenon"
     cmds:
       - pip install xenon
       - xenon -b B -m A -a A src/

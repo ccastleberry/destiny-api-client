@@ -28,6 +28,12 @@ tasks:
     sources:
       - src/
       - tests/
+  scan:
+    desc: "Run xenon"
+    cmds:
+      - xenon -b B -m A -a A src/
+    sources:
+      - src/
   test:
     desc: "run pytest"
     cmds:
@@ -37,4 +43,5 @@ tasks:
     cmds:
       - task: lint
       - task: mypy
+      - task: scan
       - task: test
