@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "destiny-api-client"
-version = "0.0.2"
+version = "2022.7.3"
 description = "Client Library for the Destiny video game api."
 readme = "README.md"
 authors = [{ name = "Caleb Castleberry", email = "castle.caleb@gmail.com" }]
@@ -40,3 +40,14 @@ dev = [
 
 [project.urls]
 Homepage = "https://github.com/ccastleberry/destiny-api-client"
+
+[tool.bumpver]
+current_version = "2022.7.3"
+version_pattern = "YYYY.MM.INC0"
+
+[tool.bumpver.file_patterns]
+"pyproject.toml" = [
+    'current_version = "{version}"',
+    'version = "{version}"',
+]
+
