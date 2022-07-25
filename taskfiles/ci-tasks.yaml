@@ -22,7 +22,7 @@ tasks:
       - pip install xenon
       - xenon -b B -m A -a A src/
   test-dags:
-    desc: "Run Pytest on dags"
+    desc: "Run Pytest"
     cmds:
       - pytest .
 
